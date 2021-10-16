@@ -17,4 +17,24 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    @Test
+    void string_with_two_number_should_return_sum_as_int(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("1,2"));
+    }
+    @Test
+    void string_with_unknown_amount_of_numbers_and_return_sum(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(10, stringCalculator.add("1,2,3,4"));
+    }
+    @Test
+    void string_handle_new_lines_and_return_sum(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(15, stringCalculator.add("1\n,2\n,3,4,5"));
+    }
+    @Test
+    void string_handler_for_delimiter_and_return_sum(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
 }
